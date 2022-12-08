@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href={% static "home/post-detail.css"%}>
+
+<style>
+
+    h2{
+        font-size: 60px;
+        margin: auto;
+        color: white;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .slide_container img{
+        height: 40rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    </style>
+{% endblock %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content%}
+
+<h2>{{ post.title }}</h2>
+<section id="summary" style="height: 40rem;">
+         <div class="slide_container">
+        <img class="slide fade" src="{%static "home/images/funny3.jpg"%}" alt="">
+        <img class="slide fade" src="{%static "home/images/funny2.jpg"%}" alt="">
+        <img class="slide fade" src="{%static "home/images/funny1.jpg"%}" alt="">
+    </div>
+    </section>
+    <script src="{% static "home/home.js" %}"></script>
+
+    <main>
+        <p>{{ post.content|linebreaks }}</p>
+    </main>
+{% endblock %}

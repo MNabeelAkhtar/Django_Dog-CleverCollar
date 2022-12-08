@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files%}
+<link rel="stylesheet" href={% static "home/home.css"%}>
+<style>
+    
+form ul {
+    width: fit-content;
+}
+
+form ul label {
+font-size: 30px;
+}
+
+    form{
+        width: 100%;
+    }
+    .slide_container{
+        border: 2px solid black;
+        border-radius: 10px;
+        height: 38rem;
+        margin-right: 20px;
+        margin-top: 20px;
+        object-fit: cover;
+    }
+    #signUp_Button button {
+        height: 50px;
+        width: 200px;
+    }
+    @media only screen and (max-width: 600px) {
+    .home-container{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .text{
+        position: static;
+    width: 100%;
+}
+    .slide_container{
+        width: 90%;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin: 30px auto;
+        height: 26rem;
+        position: static;
+        }}
+</style>
+{% endblock %}
+
+{% block title %}DogGram{% endblock %}
+
+{% block content %}
+<div class="home-container">
+
+    <div class="text">
+        <h1>Welcome to Dog Blog</h1>
+        <p>
+            Were glad your here before you start 
+            looking around enjoy this slide of funny dogs. 
+            After please sign up to create an account 
+            to create your own post
+        </p>
+    </div>
+    <div class="slide_container">
+        <img class="slide fade" src="{%static "home/images/funny3.jpg"%}" alt="">
+        <img class="slide fade" src="{%static "home/images/funny2.jpg"%}" alt="">
+        <img class="slide fade" src="{%static "home/images/funny1.jpg"%}" alt="">
+    </div>
+</div>
+    <script src="{% static "home/home.js" %}"></script>
+
+    <div class="form">
+        <form action="{% url 'home' %}" method="POST">
+            {% csrf_token %}
+            <ul>
+                {{ form.as_ul }}
+            </ul>
+            <div id="signUp_Button">
+                <button>Sign Up</button>
+            </div>
+        </form>
+    </div>
+ 
+{% endblock %}
