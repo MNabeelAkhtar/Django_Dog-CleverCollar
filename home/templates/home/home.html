@@ -33,6 +33,11 @@ font-size: 30px;
         display: flex;
         flex-direction: column;
         height: fit-content;
+        height: 70vh;
+        justify-content: center;
+        width: 90%;
+        align-items: center;
+        margin: auto;
     }
 
     .text{
@@ -46,7 +51,17 @@ font-size: 30px;
         margin: 30px auto;
         height: 26rem;
         position: static;
-        }}
+        }
+    
+    }
+         .home-btn{
+            left: 0 !important;
+            padding: 14px 50px !important;
+            background-color: black;
+            color: white;
+            margin-top: 20px;
+            
+        }
 </style>
 {% endblock %}
 
@@ -63,11 +78,7 @@ font-size: 30px;
             After please sign up to create an account 
             to create your own post
         </p>
-    </div>
-    <div class="slide_container">
-        <img class="slide fade" src="{%static "home/images/funny3.jpg"%}" alt="">
-        <img class="slide fade" src="{%static "home/images/funny2.jpg"%}" alt="">
-        <img class="slide fade" src="{%static "home/images/funny1.jpg"%}" alt="">
+            <a class="home-btn" href="{% url "allpost" %}">See All Posts</a>
     </div>
 </div>
     <script src="{% static "home/home.js" %}"></script>
