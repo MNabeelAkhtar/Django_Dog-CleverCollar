@@ -11,14 +11,40 @@
         margin: auto;
         color: white;
         text-align: center;
-        margin-top: 30px;
+        margin-top: 10px;
     }
     .slide_container img{
         height: 40rem;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
-
+    #summary{
+        margin-top: 10px;
+    }
+    @media only screen and (max-width: 600px) {
+        .slide_container img{
+            object-fit: cover;
+        }
+        #summary{
+            width: 75%;
+        }
+        main{
+            margin: 3rem auto !important;
+            width: 75%;
+        }
+    }
+    .home_btn{
+            left: 0 !important;
+            padding: 14px 50px !important;
+            background-color: green;
+            color: white;
+            text-align: center;
+            margin-left: 2px;
+            border-radius: 10px;
+        }
+    main {
+        margin: 3rem auto !important;
+    }
     </style>
 {% endblock %}
 
@@ -29,14 +55,26 @@
 <h2>{{ post.title }}</h2>
 <section id="summary" style="height: 40rem;">
          <div class="slide_container">
-        <img class="slide fade" src="{%static "home/images/funny3.jpg"%}" alt="">
-        <img class="slide fade" src="{%static "home/images/funny2.jpg"%}" alt="">
-        <img class="slide fade" src="{%static "home/images/funny1.jpg"%}" alt="">
+        <img class="slide fade" src="{{ post.image.url }}" alt="">
+        <img class="slide fade" src="{{ post.sec_image.url }}" alt="">
+        <img class="slide fade" src="{{ post.mor_image.url }}" alt="">
     </div>
     </section>
     <script src="{% static "home/home.js" %}"></script>
 
     <main>
+        <p style="font-size: 30px;">Dog Info:</p>
+        <p>Name: {{ post.name }}</p>
+        <p>Age: {{ post.age }}</p>
+        <p>Breed: {{ post.breed }}</p>
+    </main>
+    <main>
         <p>{{ post.content|linebreaks }}</p>
     </main>
+    <div>
+        <main style="display: flex; justify-content: space-around;">
+            <p style="margin-left: 70px;">Owner Name: {{ post.owner_name }}</p>
+            <a style="margin-right: 10px;" class="home_btn" href="tel:123-456-7890">CALL OWNER</a>
+        </main>
+    </div>
 {% endblock %}

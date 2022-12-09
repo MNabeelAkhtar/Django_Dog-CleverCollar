@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: orange;
+    background-color: blue;
 }
 h1 {
     font-family: 'Source Serif 4', sans-serif;
@@ -49,6 +49,6 @@ nav a{
 
 nav a:hover{
     font-size: 22px;
-    color: orange;
+    color: blue;
 }
 

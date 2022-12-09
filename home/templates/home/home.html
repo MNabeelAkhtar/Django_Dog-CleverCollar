@@ -54,14 +54,15 @@ font-size: 30px;
         }
     
     }
-         .home-btn{
-            left: 0 !important;
-            padding: 14px 50px !important;
-            background-color: black;
-            color: white;
-            margin-top: 20px;
-            
-        }
+    .home-btn{
+        left: 0 !important;
+        padding: 20px 50px !important;
+        background-color: black;
+        color: white;
+        margin-top: 20px;
+        font-size: 15px !important;
+        border-radius: 10px;
+    }
 </style>
 {% endblock %}
 
@@ -71,8 +72,8 @@ font-size: 30px;
 <div class="home-container">
 
     <div class="text">
-        <h1>Welcome to Dog Blog</h1>
-        <p>
+        <h1 style="font-size: 45px;">Welcome to Dog Blog</h1>
+        <p style="font-size: 25px;">
             Were glad your here before you start 
             looking around enjoy this slide of funny dogs. 
             After please sign up to create an account 
@@ -83,7 +84,7 @@ font-size: 30px;
 </div>
     <script src="{% static "home/home.js" %}"></script>
 
-    <div class="form">
+    <!-- <div class="form">
         <form action="{% url 'home' %}" method="POST">
             {% csrf_token %}
             <ul>
@@ -93,6 +94,6 @@ font-size: 30px;
                 <button>Sign Up</button>
             </div>
         </form>
-    </div>
+    </div> -->
  
 {% endblock %}
