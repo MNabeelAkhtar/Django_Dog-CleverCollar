@@ -41,6 +41,11 @@
             text-align: center;
             margin-left: 2px;
             border-radius: 10px;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            width: fit-content;
+            margin-bottom: 20px;
         }
     main {
         margin: 3rem auto !important;
@@ -55,9 +60,9 @@
 <h2>{{ post.title }}</h2>
 <section id="summary" style="height: 40rem;">
          <div class="slide_container">
-        <img class="slide fade" src="{{ post.image.url }}" alt="">
-        <img class="slide fade" src="{{ post.sec_image.url }}" alt="">
-        <img class="slide fade" src="{{ post.mor_image.url }}" alt="">
+        <img class="slide fade" src="{{ post.image }}" alt="">
+        <img class="slide fade" src="{{ post.sec_image }}" alt="">
+        <img class="slide fade" src="{{ post.mor_image }}" alt="">
     </div>
     </section>
     <script src="{% static "home/home.js" %}"></script>
@@ -72,5 +77,5 @@
     <main>
         <p>{{ post.content|linebreaks }}</p>
     </main>
-    <a style="margin-left: 500px;" class="home_btn" href="tel:123-456-7890">CALL OWNER</a>
+    <a class="home_btn" href="tel:123-456-7890">CALL OWNER</a>
 {% endblock %}

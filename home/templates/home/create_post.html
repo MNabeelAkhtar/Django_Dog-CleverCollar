@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block css_files%}
+<style>
+    .form-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .black-box{
+        background-color: black;
+        padding: 60px;
+        border-radius: 20px;
+    }
+
+    .input-container{
+        margin: 10px 0;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    input{
+        height: 25px;
+        width: 190px;
+        font-size: 20px;
+    }
+    label{
+    }
+    h2{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .home_btn{
+        left: 0 !important;
+        padding: 10px 35px !important;
+        background-color: rgb(35, 163, 9);
+        color: white;
+        text-align: center;
+        margin-left: 2px;
+        border-radius: 10px;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        width: fit-content;
+        margin-top: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+    <div class='black-box'>
+        <h2>Add Post</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-container">
+                <label>Name:</label>
+                <input name="dog_name" type="text">
+            </div>
+            <div class="input-container">
+                <label>Age:</label>
+                <input name="dog_age" type="text">
+            </div>
+            <div class="input-container">
+                <label>Breed:</label>
+                <input name="dog_breed" type="text">
+            </div>
+            <div class="input-container">
+                <label>Owner Name:</label>
+                <input name="owner_name" type="text">
+            </div>
+            <div class="input-container">
+                <label>Title:</label>
+                <input name="title" type="text">
+            </div>
+            <div class="input-container">
+                <label>Author:</label>
+                <input name="author" type="text">
+            </div>
+            <div class="input-container">
+                <label>Excerpt:</label>
+                <textarea id="w3review" name="excerpt" rows="4" cols="50"></textarea>
+            </div>
+            <div class="input-container">
+                <label>Content:</label>
+                <textarea id="w3review" name="content" rows="4" cols="50"></textarea>
+            </div>
+            <div class="input-container">
+                <label>Date:</label>
+                <input name="date" type="date">
+            </div>
+            <div class="input-container">
+                <label>Image:</label>
+                <input name="image" type="text">
+            </div>
+            <div class="input-container">
+                <label>Second Image:</label>
+                <input name="sec_image" type="text">
+            </div>
+            <div class="input-container">
+                <label>Other Image:</label>
+                <input name="mor_image" type="text">
+            </div>
+            <button type="submit" class='home_btn'>Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
