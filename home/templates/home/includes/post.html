@@ -5,6 +5,7 @@
 <style>
 h3{
     text-align: left;
+    color: #F7931E !important;
 }
 button{
     margin: auto;
@@ -20,15 +21,18 @@ button{
    object-fit: cover !important;
    border-radius: 20px;
    left: 0;
-   margin: auto;
+   margin: 10px auto;
+   width: 20rem;
    height: 23rem;
       }
       .item{
-        height: 40rem;
+        height: 38rem;
        display: flex;
        align-items: center;
        justify-content: center;
        flex-direction: column;
+       font-family: Arial, Helvetica, sans-serif;
+       color: #F7931E !important;
       }
       .post_content p{
         margin-top: 20px;
@@ -42,9 +46,9 @@ button{
 {% endblock %}
 
 <li class="item">
+    <a href="{% url "post_details" post.slug %}">
     <img src="{{ post.image.url }}" alt="{{ post.title }}">
     <article class="post">
-        <a href="{% url "post_details" post.slug %}">
             <h3>Name: {{ post.name }}</h3>
             <h3>Age: {{ post.age }} </h3>
             <h3>Breed: {{ post.breed }}</h3>
