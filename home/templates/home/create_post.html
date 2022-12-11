@@ -70,7 +70,7 @@
 <div class="form-container">
     <div class='black-box'>
         <h2>Add Post</h2>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="input-container">
                 <label>Name:</label>
@@ -110,15 +110,15 @@
             </div>
             <div class="input-container">
                 <label>Image:</label>
-                <input name="image" type="text">
+                <input name="image" type="file" accept="image/*">
             </div>
             <div class="input-container">
                 <label>Second Image:</label>
-                <input name="sec_image" type="text">
+                <input name="sec_image" type="file" accept="image/*">
             </div>
             <div class="input-container">
                 <label>Other Image:</label>
-                <input name="mor_image" type="text">
+                <input name="mor_image" type="file" accept="image/*">
             </div>
             <button type="submit" class='home_btn'>Submit</button>
         </form>

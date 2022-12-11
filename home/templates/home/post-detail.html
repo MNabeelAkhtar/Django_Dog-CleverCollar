@@ -60,9 +60,9 @@
 <h2>{{ post.title }}</h2>
 <section id="summary" style="height: 40rem;">
          <div class="slide_container">
-        <img class="slide fade" src="{{ post.image }}" alt="">
-        <img class="slide fade" src="{{ post.sec_image }}" alt="">
-        <img class="slide fade" src="{{ post.mor_image }}" alt="">
+        <img class="slide fade" src="{{ post.image.url }}" alt="">
+        <img class="slide fade" src="{{ post.sec_image.url }}" alt="">
+        <img class="slide fade" src="{{ post.mor_image.url }}" alt="">
     </div>
     </section>
     <script src="{% static "home/home.js" %}"></script>

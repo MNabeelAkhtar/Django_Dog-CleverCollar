@@ -37,9 +37,9 @@ def create_post(request):
         excerpt = request.POST['excerpt']
         content = request.POST['content']
         date = request.POST['date']
-        image = request.POST['image']
-        sec_image = request.POST['sec_image']
-        mor_image = request.POST['mor_image']
+        image = request.FILES['image']
+        sec_image = request.FILES['sec_image']
+        mor_image = request.FILES['mor_image']
         slug = title.lower().replace(" ", "-")
         print(slug, title, name)
         Post.objects.create(name=name, age=age, breed=breed, owner_name=owner_name, title=title,

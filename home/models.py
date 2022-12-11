@@ -27,9 +27,9 @@ class Post(models.Model):
     excerpt = models.TextField(null=True)
     content = models.TextField(null=True)
     slug = models.SlugField(unique=True)
-    image = models.CharField(max_length=250, default=None)
-    sec_image = models.CharField(max_length=250, default=None)
-    mor_image = models.CharField(max_length=250, default=None)
+    image = models.ImageField(upload_to='images')
+    sec_image = models.ImageField(upload_to='images')
+    mor_image = models.ImageField(upload_to='images')
 
 
 
